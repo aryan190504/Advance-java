@@ -1,0 +1,68 @@
+package com.rays.controller;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.rays.bean.MarksheetBean;
+import com.rays.model.MarksheetModel;
+
+@WebServlet("/MarksheetCtl.do")
+public class MarksheetCtl extends HttpServlet {
+
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.sendRedirect("MarksheetView.jsp");
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+	     	MarksheetModel model = new MarksheetModel();
+	    	MarksheetBean bean = new MarksheetBean();
+		
+		      String name = request.getParameter("name");
+		      Integer.parseInt(request.getParameter("rollNo"));
+		      Integer.parseInt(request.getParameter("physics"));
+		      Integer.parseInt(request.getParameter("chemistry"));
+		      Integer.parseInt(request.getParameter("maths"));
+
+		      
+		      bean.setName(name);
+		      bean.setRollNo(rollNo);
+		      bean.setPhysics(physics);
+		      bean.setChemistry(chemistry);
+		      bean.setMaths(maths);
+		      
+		      String op = request.getParameter("parameter");
+		      
+		      if (op.equals("add")) {
+					model.add(bean);
+					request.setAttribute("smsg", "Marksheet Added Successfully....");
+				} else if (op.equals("update")) {
+
+					bean.setId(Integer.parseInt(request.getParameter("id")));
+
+					model.update(bean);
+					request.setAttribute("smsg", "Marksheet Updated successfully...");
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				RequestDispatcher rd = request.getRequestDispatcher("MarksheetView.jsp");
+
+				rd.forward(request, response);
+			}
+		      
+
+		
+
+	}
+
+}

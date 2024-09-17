@@ -1,0 +1,9 @@
+package com.rays.model;
+
+import com.rays.bean.MarksheetBean;
+
+public class MarksheetModel {
+	
+	
+
+}

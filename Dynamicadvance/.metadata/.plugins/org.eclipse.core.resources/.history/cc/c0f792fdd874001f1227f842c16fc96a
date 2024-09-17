@@ -1,0 +1,78 @@
+package com.rays.model;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import com.rays.bean.UserBean;
+import com.rays.util.JDBCDataSource;
+
+public class MarksheetModel {
+	
+	public int nextPk() throws Exception {
+
+		int pk = 0;
+
+		Connection conn = JDBCDataSource.getConnection();
+
+		PreparedStatement ps = conn.prepareStatement("select max(id) from user");
+
+		ResultSet rs = ps.executeQuery();
+
+		while (rs.next()) {
+
+			pk = rs.getInt(1);
+
+			System.out.println("max id = " + pk);
+
+		}
+		return pk + 1;
+
+	}
+
+	public void add(UserBean bean) throws Exception {
+
+		Connection conn = null;
+
+		try {
+
+			conn = JDBCDataSource.getConnection();
+
+			PreparedStatement pstmt = conn.prepareStatement("insert into user values(?,?,?,?,?,?,?,?,?)");
+
+			UserBean existBean = findByLoginId(bean.getLoginId());
+
+			conn.setAutoCommit(false);
+
+			if (existBean == null) {
+
+				pstmt.setInt(1, nextPk());
+				pstmt.setString(2, bean.getFirstName());
+				pstmt.setString(3, bean.getLastName());
+				pstmt.setString(4, bean.getLoginId());
+				pstmt.setString(5, bean.getPassword());
+				pstmt.setDate(6, new java.sql.Date(bean.getDob().getTime()));
+				pstmt.setString(7, bean.getPhoneNo());
+				pstmt.setString(8, bean.getAddress());
+				pstmt.setString(9, bean.getGender());
+
+				int i = pstmt.executeUpdate();
+
+				conn.commit();
+
+				System.out.println("data inserted successfully.. " + i);
+			} else {
+				System.out.println("loginId already exist");
+			}
+
+		} catch (Exception e) {
+
+			conn.rollback();
+			e.printStackTrace();
+
+		}
+
+	}
+
+
+}

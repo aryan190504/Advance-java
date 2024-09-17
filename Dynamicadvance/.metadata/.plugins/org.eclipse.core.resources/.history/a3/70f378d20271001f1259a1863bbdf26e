@@ -1,0 +1,57 @@
+package com.rays.controller;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.rays.bean.MarksheetBean;
+import com.rays.model.MarksheetModel;
+
+@WebServlet("/MarksheetController")
+public class MarksheetController extends HttpServlet {
+
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		response.sendRedirect("MarksheetView.jsp");
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		MarksheetBean bean = new MarksheetBean();
+		MarksheetModel model = new MarksheetModel();
+
+		String name = request.getParameter("name");
+		String rollNo = request.getParameter("rollNo");
+		String physics = request.getParameter("physics");
+		String chemistry = request.getParameter("chemistry");
+		String maths = request.getParameter("maths");
+		int rollNoInt = Integer.parseInt(rollNo);
+
+		try {
+
+			bean.setName(name);
+			bean.setRollNo(rollNoInt);
+			bean.setPhysics(physics);
+			bean.setChemistry(chemistry);
+			bean.setMaths(maths);
+
+			model.add(bean);
+			request.setAttribute("smsg", "Marksheet added succesfully...");
+		} catch (Exception e) {
+
+		}
+
+		RequestDispatcher rd = request.getRequestDispatcher("MarksheetView.jsp");
+		rd.forward(request, response);
+
+	}
+}

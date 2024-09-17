@@ -1,0 +1,7 @@
+driver=com.mysql.cj.jdbc.Driver
+url=mysql:jdbc://localhost:3306/myproject
+username=root
+password=root
+initialpoolsize=10
+acquireincrement=10
+maxpoolsize=30

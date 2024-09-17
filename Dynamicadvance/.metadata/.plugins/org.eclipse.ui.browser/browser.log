@@ -1,0 +1,90 @@
+
+Sep 04, 2024 17:40:29.14 NEW SESSION
+Sep 04, 2024 17:40:29.14 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 04, 2024 17:40:56.77 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+
+Sep 04, 2024 20:34:50.94 NEW SESSION
+Sep 04, 2024 20:34:50.94 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 04, 2024 20:34:54.26 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+
+Sep 06, 2024 16:03:14.27 NEW SESSION
+Sep 06, 2024 16:03:14.27 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 06, 2024 16:03:47.25 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+
+Sep 06, 2024 17:24:03.60 NEW SESSION
+Sep 06, 2024 17:24:03.60 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 06, 2024 17:24:36.27 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+
+Sep 11, 2024 08:46:36.97 NEW SESSION
+Sep 11, 2024 08:46:36.97 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 11, 2024 08:47:08.67 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+
+Sep 11, 2024 14:55:36.82 NEW SESSION
+Sep 11, 2024 14:55:36.82 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 11, 2024 14:56:09.99 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+Sep 11, 2024 15:17:55.75 [11712:10700:0911/151755.749:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+Sep 11, 2024 15:39:46.59 [11712:10700:0911/153946.591:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+
+Sep 12, 2024 14:35:38.24 NEW SESSION
+Sep 12, 2024 14:35:38.24 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 12, 2024 14:35:49.16 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+Sep 12, 2024 14:45:02.74 [5992:15920:0912/144502.747:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 12, 2024 15:01:48.86 [5992:2332:0912/150148.866:ERROR:device_event_log_impl.cc(196)] [15:01:48.865] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+Sep 12, 2024 15:43:36.28 [5992:2332:0912/154336.284:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+Sep 12, 2024 15:52:56.16 [5992:2332:0912/155256.166:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+Sep 12, 2024 16:03:13.88 [5992:15920:0912/160313.883:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 12, 2024 17:29:09.91 [5992:15920:0912/172909.909:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 12, 2024 17:29:09.94 [5992:15920:0912/172909.941:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 12, 2024 17:29:10.98 [5992:2332:0912/172910.981:ERROR:device_event_log_impl.cc(196)] [17:29:10.982] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+Sep 12, 2024 17:29:16.11 [5992:15920:0912/172916.110:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 12, 2024 17:29:21.68 [5992:15920:0912/172921.683:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+
+Sep 13, 2024 08:17:55.02 NEW SESSION
+Sep 13, 2024 08:17:55.02 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 13, 2024 08:18:05.61 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+Sep 13, 2024 09:00:34.82 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 13, 2024 09:01:07.94 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+
+Sep 13, 2024 13:45:52.57 NEW SESSION
+Sep 13, 2024 13:45:52.57 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 13, 2024 13:46:04.94 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+
+Sep 13, 2024 20:39:12.76 NEW SESSION
+Sep 13, 2024 20:39:12.76 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 13, 2024 20:39:23.21 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+Sep 13, 2024 20:40:03.54 [596:13840:0913/204003.541:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+
+Sep 14, 2024 13:53:09.78 NEW SESSION
+Sep 14, 2024 13:53:09.78 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 14, 2024 13:53:13.03 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+Sep 14, 2024 14:06:47.90 [14704:4100:0914/140647.908:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+
+Sep 14, 2024 15:49:50.53 NEW SESSION
+Sep 14, 2024 15:49:50.53 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 14, 2024 15:50:06.12 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+
+Sep 15, 2024 13:47:21.88 NEW SESSION
+Sep 15, 2024 13:47:21.88 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 15, 2024 13:47:41.46 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+Sep 15, 2024 13:48:52.55 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 15, 2024 16:58:39.50 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 15, 2024 16:59:07.64 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+Sep 15, 2024 20:16:55.00 [15244:14040:0915/201655.000:ERROR:device_event_log_impl.cc(196)] [20:16:54.999] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+Sep 15, 2024 20:52:33.99 [15244:14544:0915/205233.995:ERROR:get_updates_processor.cc(265)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_INTERNET_DISCONNECTED)
+
+Sep 16, 2024 15:57:17.03 NEW SESSION
+Sep 16, 2024 15:57:17.03 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 16, 2024 15:57:30.73 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+Sep 16, 2024 15:57:31.21 [3628:5540:0916/155731.219:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 16, 2024 15:58:14.93 [3628:5540:0916/155814.933:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 16, 2024 16:18:53.00 [3628:5540:0916/161852.999:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 16, 2024 16:19:10.76 [3628:6660:0916/161910.761:ERROR:device_event_log_impl.cc(196)] [16:19:10.761] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+
+Sep 17, 2024 18:39:05.20 NEW SESSION
+Sep 17, 2024 18:39:05.20 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 17, 2024 18:39:28.51 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+Sep 17, 2024 18:43:33.54 [10828:6908:0917/184333.547:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 17, 2024 20:45:35.66 [10828:6908:0917/204535.664:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 17, 2024 20:45:35.69 [10828:6908:0917/204535.694:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 17, 2024 20:45:35.70 [10828:13876:0917/204535.700:ERROR:device_event_log_impl.cc(196)] [20:45:35.699] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+Sep 17, 2024 20:45:38.64 [10828:13388:0917/204538.643:ERROR:get_updates_processor.cc(265)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_INTERNET_DISCONNECTED)

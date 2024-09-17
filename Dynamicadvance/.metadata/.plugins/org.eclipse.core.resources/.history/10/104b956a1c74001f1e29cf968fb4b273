@@ -1,0 +1,8 @@
+package com.rays.controller;
+
+import javax.servlet.annotation.WebServlet;
+
+@WebServlet("/MarksheetCtl.do")
+public class MarksheetCtl {
+
+}

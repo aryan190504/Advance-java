@@ -1,0 +1,66 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<%@include file="Header.jsp"%>
+	<form action="MarksheetController" method="post">
+		<div align="center">
+		<h1>Add Marksheet</h1>
+		
+		<%
+			String smsg = (String) request.getAttribute("smsg");
+			MarksheetBean bean = (MarksheetBean) request.getAttribute("bean");
+		%>
+		
+
+		
+
+			<%
+				if (smsg != null) {
+			%>
+
+			<h3 style="color: green" align="center"></h3>
+				<%
+					
+				}
+			%>
+			<table>
+			<tr>
+				<th>Name:</th>
+				<td><input type="text" name="name"
+				 value="<%= (bean !=null) ? bean.getName() : "" %>"="enter name"></td>
+			</tr>
+			<tr>
+				<th>RollNo:</th>
+				<td><input type="number" name="rollNO"
+					placeholder="enter rollNo"></td>
+			</tr>
+			<tr>
+				<th>Physics:</th>
+				<td><input type="number" name="physics"
+					placeholder="enter physicsNo"></td>
+			</tr>
+			<tr>
+				<th>Chemistry:</th>
+				<td><input type="number" name="chemistry"
+					placeholder="enter chemistryNo"></td>
+			</tr>
+			<tr>
+				<th>Maths :</th>
+				<td><input type="number" name="maths"
+					placeholder="enter mathsNo"></td>
+			</tr>
+			<tr>
+				<th></th>
+				<td><input type="submit" name="operation" value="save"></td>
+			</tr>
+		</table>
+		</div>
+	</form>
+</body>
+</html>

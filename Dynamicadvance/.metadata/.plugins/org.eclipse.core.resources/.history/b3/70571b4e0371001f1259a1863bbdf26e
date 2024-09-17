@@ -1,0 +1,204 @@
+package com.rays.model;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+
+import com.rays.bean.MarksheetBean;
+import com.rays.util.JDBCDataSource;
+
+public class MarksheetModel {
+	public int nextPk() throws Exception {
+
+		int pk = 0;
+
+		Connection conn = JDBCDataSource.getConnection();
+
+		PreparedStatement ps = conn.prepareStatement("select max(id) from marksheet");
+
+		ResultSet rs = ps.executeQuery();
+
+		while (rs.next()) {
+
+			pk = rs.getInt(1);
+
+			System.out.println("max id = " + pk);
+		}
+
+		return pk + 1;
+
+	}
+
+	public void add(MarksheetBean bean) throws Exception {
+		Connection conn = JDBCDataSource.getConnection();
+		PreparedStatement pstmt = conn.prepareStatement("insert into marksheet values (?,?,?,?,?,?)");
+
+		MarksheetBean existBean = findByRollNo(bean.getRollNo());
+
+		pstmt.setInt(1, bean.getId());
+		pstmt.setString(2, bean.getName());
+		pstmt.setInt(3, bean.getRollNo());
+		pstmt.setInt(4, bean.getPhysics());
+		pstmt.setInt(5, bean.getChemistry());
+		pstmt.setInt(6, bean.getMaths());
+
+		int i = pstmt.executeUpdate();
+
+		System.out.println("Data inserted successfully");
+	}
+
+	
+
+	public void update(MarksheetBean bean) throws Exception {
+		Connection conn = JDBCDataSource.getConnection();
+		PreparedStatement pstmt = conn.prepareStatement(
+				"update marksheet set name = ? ,rollNo = ? ,physics = ? ,chemistry = ? ,maths = ? where id = ?");
+		pstmt.setString(1, bean.getName());
+		pstmt.setInt(2, bean.getRollNo());
+		pstmt.setInt(3, bean.getPhysics());
+		pstmt.setInt(4, bean.getChemistry());
+		pstmt.setInt(5, bean.getMaths());
+		pstmt.setInt(6, bean.getId());
+
+		int i = pstmt.executeUpdate();
+
+		System.out.println("Data updated Successfully..." + i);
+	}
+
+	public void delete(MarksheetBean bean) throws Exception {
+		Connection conn = JDBCDataSource.getConnection();
+		PreparedStatement pstmt = conn.prepareStatement("delete from marksheet where id = ? ");
+
+		pstmt.setInt(1, bean.getId());
+
+		int i = pstmt.executeUpdate();
+		System.out.println("Data deleted Successfully..." + i);
+	}
+
+	public MarksheetBean searchAll() throws Exception {
+
+		Connection conn = JDBCDataSource.getConnection();
+		PreparedStatement pstmt = conn.prepareStatement("select * from marksheet");
+
+		ResultSet rs = pstmt.executeQuery();
+
+		MarksheetBean bean = null;
+
+		while (rs.next()) {
+			bean = new MarksheetBean();
+  
+			bean.setId(rs.getInt(1));
+			bean.setName(rs.getString(2));
+			bean.setRollNo(rs.getInt(3));
+			bean.setPhysics(rs.getString(4));
+			bean.setChemistry(rs.getString(5));
+			bean.setMaths(rs.getString(6));
+		}
+
+		return bean;
+
+	}
+
+	public MarksheetBean findByRollNo(int rollNo) throws Exception {
+
+		Connection conn = JDBCDataSource.getConnection();
+
+		PreparedStatement pstmt = conn.prepareStatement("select * from marksheet where rollNo = ? ");
+		pstmt.setInt(1, rollNo);
+
+		ResultSet rs = pstmt.executeQuery();
+		MarksheetBean bean = null;
+		while (rs.next()) {
+			bean = new MarksheetBean();
+
+			bean.setId(rs.getInt(1));
+			bean.setName(rs.getString(2));
+			bean.setRollNo(rs.getInt(3));
+			bean.setPhysics(rs.getString(4));
+			bean.setChemistry(rs.getString(5));
+			bean.setMaths(rs.getString(6));
+
+		}
+
+		return bean;
+
+	}
+
+	public List search(MarksheetBean bean) throws Exception {
+
+		// Class.forName("com.mysql.cj.jdbc.Driver");
+
+		/// Connection conn =
+		/// DriverManager.getConnection("jdbc:mysql://localhost:3306/myproject", "root",
+		/// "root");
+		// ResourceBundle rb = ResourceBundle.getBundle("com.rays.bundle.system");
+		// Class.forName(rb.getString("driver"));
+
+		// Connection conn = DriverManager.getConnection(rb.getString("url"),
+		// rb.getString("user"),
+		// rb.getString("password"));
+
+		Connection conn = JDBCDataSource.getConnection();
+		StringBuffer sql = new StringBuffer("select * from marksheet where 1=1");
+
+		if (bean != null) {
+			if (bean.getName() != null && bean.getName().length() > 0) {
+				sql.append(" and Name like '" + bean.getName() + "'");
+
+			}
+		}
+		System.out.println(sql.toString());
+
+		PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+
+		ResultSet rs = pstmt.executeQuery();
+
+		List list = new ArrayList();
+
+		while (rs.next()) {
+			bean = new MarksheetBean();
+
+			bean.setId(rs.getInt(1));
+			bean.setName(rs.getString(2));
+			bean.setRollNo(rs.getInt(3));
+			bean.setPhysics(rs.getString(4));
+			bean.setChemistry(rs.getString(5));
+			bean.setMaths(rs.getString(6));
+			list.add(bean);
+		}
+
+		return list;
+
+	}
+
+	public List marksheet(MarksheetBean bean) throws SQLException, Exception {
+		Connection conn = JDBCDataSource.getConnection();
+
+		PreparedStatement pstmt = conn.prepareStatement(
+				"SELECT *, (physics + chemistry + maths) AS total, ((physics + chemistry + maths) / 3) AS percentage FROM marksheet WHERE physics > 60 AND chemistry > 60 AND maths > 60 ORDER BY total DESC LIMIT 0, 2");
+		ResultSet rs = pstmt.executeQuery();
+
+		List list = new ArrayList();
+
+		while (rs.next()) {
+			bean = new MarksheetBean();
+
+			bean.setId(rs.getInt(1));
+			bean.setName(rs.getString(2));
+			bean.setRollNo(rs.getInt(3));
+			bean.setPhysics(rs.getString(4));
+			bean.setChemistry(rs.getString(5));
+			bean.setMaths(rs.getString(6));
+			list.add(bean);
+		}
+
+		return list;
+
+	}
+
+}
